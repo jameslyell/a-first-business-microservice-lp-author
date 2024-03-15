@@ -1,0 +1,12 @@
+
+
+% curl -v http://localhost:8001/find_rate -XPOST -d "12345"
+    :
+< HTTP/1.1 404 Not Found
+< content-length: 9
+< date: Fri, 15 Mar 2024 11:31:20 GMT
+Not found
+
+
+% curl http://localhost:8001/find_rate -XPOST -d "89102"
+0.08375
