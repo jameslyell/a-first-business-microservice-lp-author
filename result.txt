@@ -1,0 +1,66 @@
+ % cargo build --target wasm32-wasi --release
+
+   Compiling autocfg v1.1.0
+   Compiling wasi v0.11.0+wasi-snapshot-preview1
+   Compiling cfg-if v1.0.0
+   Compiling proc-macro2 v1.0.79
+   Compiling ppv-lite86 v0.2.17
+   Compiling unicode-ident v1.0.12
+   Compiling bytes v1.5.0
+   Compiling libc v0.2.153
+   Compiling byteorder v1.5.0
+   Compiling syn v1.0.109
+   Compiling quick-error v1.2.3
+   Compiling pin-project-lite v0.2.13
+   Compiling getrandom v0.2.12
+   Compiling memchr v2.7.1
+   Compiling log v0.4.21
+   Compiling dns-parser v0.8.0
+   Compiling rand_core v0.6.4
+   Compiling once_cell v1.19.0
+   Compiling tokio_wasi v1.25.2
+   Compiling rand_chacha v0.3.1
+   Compiling itoa v1.0.10
+   Compiling futures-core v0.3.30
+   Compiling rand v0.8.5
+   Compiling tracing-core v0.1.32
+   Compiling slab v0.4.9
+   Compiling indexmap v1.9.3
+   Compiling fnv v1.0.7
+   Compiling http v0.2.12
+   Compiling tracing v0.1.40
+   Compiling httparse v1.8.0
+   Compiling quote v1.0.35
+   Compiling pin-utils v0.1.0
+   Compiling futures-sink v0.3.30
+   Compiling wasmedge_wasi_socket v0.5.4
+   Compiling serde v1.0.197
+   Compiling futures-task v0.3.30
+   Compiling hashbrown v0.12.3
+   Compiling futures-util v0.3.30
+   Compiling mio_wasi v0.8.9
+   Compiling try-lock v0.2.5
+   Compiling anyhow v1.0.81
+   Compiling want v0.3.1
+   Compiling http-body v0.4.6
+   Compiling csv-core v0.1.11
+   Compiling futures-channel v0.3.30
+   Compiling httpdate v1.0.3
+   Compiling ryu v1.0.17
+   Compiling tower-service v0.3.2
+   Compiling tokio-macros v1.8.2
+   Compiling csv v1.3.0
+   Compiling tokio-util_wasi v0.7.5
+   Compiling h2_wasi v0.3.15
+   Compiling hyper_wasi v0.15.2
+   Compiling sales_tax_rate_lookup v0.1.0 (/Users/james/dev/manning-rust-wasm-liveproject/2_a-first-business-microservice-lp-author)
+    Finished release [optimized] target(s) in 8.93s
+
+% wasmedge target/wasm32-wasi/release/sales_tax_rate_lookup.wasm
+[src/main.rs:55:5] "Server started on port 8001" = "Server started on port 8001"
+
+
+(TERMINAL 2)
+
+% curl http://localhost:8001/find_rate -XPOST -d "78701"
+0.0825
